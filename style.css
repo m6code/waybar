@@ -42,17 +42,17 @@ tooltip label {
 }
 
 #workspaces button {
+  background-color: @background;
+  color: @cursor;
   padding: 0px 6px;
   margin: 0px 3px;
   border-radius: 36px;
-  color: @color14;
-  background-color: @color0;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  background-color: @background;
-  color: @cursor;
+  color: @color14;
+  background-color: @color0;
   min-width: 36px;
   transition: all 0.3s ease-in-out;
   font-size: 13px;

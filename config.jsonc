@@ -79,7 +79,7 @@
   "network#wifi": {
     "interval": 1,
     "interface": "wlo1",
-    "format": "{ifname}",
+    "format": "",
     "format-wifi": "⌄ {bandwidthDownBytes} ⌃ {bandwidthUpBytes}  {essid}  ({signalStrength}%)",
     "format-disconnected": "", //An empty format will hide the module.
     // "format-disconnected": "",
