@@ -1,10 +1,9 @@
-{
-  "position": "top",
+{ "position": "top",
   // "position": "bottom",
   "margin-top": 5,
   "margin-bottom": 5,
 
-  "modules-left": ["clock", "hyprland/workspaces","hyprland/window", "mpris"],
+  "modules-left": ["clock", "sway/workspaces","hyprland/workspaces","hyprland/window", "sway/window", "mpris"],
   "modules-center": ["tray"],
   "modules-right": [
     "network#wifi",
@@ -45,6 +44,26 @@
       // "HDMI-A-1": 3 // but only three on HDMI-A-1
     }
   },
+  "sway/workspaces": {
+    "format": "{name} {icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      // "*": 5, // 5 workspaces by default on every monitor
+      // "HDMI-A-1": 3 // but only three on HDMI-A-1
+    }
+  },
+ 
   "tray": {
     "icon-size": 14,
     "spacing": 7,
