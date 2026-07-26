@@ -1,9 +1,10 @@
-@import "./colors/one-dark.css";
+/* @import "./colors/one-dark.css"; */
+/* @import "./colors/one-dark.css"; */
+@import "./colors.css";
 
 * {
   border: none;
   border-radius: 0px;
-
   font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font Propo", sans-serif;
   font-weight: bold;
   font-size: 11px;
@@ -17,56 +18,57 @@ window#waybar {
 }
 
 tooltip {
-  background-color: @bg0;
-  border: 1px solid @bg3;
+  background-color: @background;
+  border: 1px solid @color6;
   border-radius: 12px;
 }
 
 tooltip label {
-  color: @fg;
+  color: @foreground;
   padding: 6px;
 }
 #window {
   margin: 0 0 0 8px;
+  color: @color9;
 }
 
 #workspaces {
-  background-color: @bg0;
+  background-color: @background;
   padding: 5px 3px;
   margin: 0 0 0 12px;
   border-radius: 18px;
-  border: 1px solid @bg1;
-  color: @fg;
+  border: 1px solid @color0;
+  color: @foreground;
 }
 
 #workspaces button {
   padding: 0px 6px;
   margin: 0px 3px;
   border-radius: 36px;
-  color: transparent;
-  background-color: @bg1;
+  color: @color14;
+  background-color: @color0;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  background-color: @blue;
-  color: @bg0;
+  background-color: @background;
+  color: @cursor;
   min-width: 36px;
   transition: all 0.3s ease-in-out;
   font-size: 13px;
 }
 
 #workspaces button:hover {
-  background-color: @purple;
-  color: @bg0;
+  background-color: @color13;
+  color: @background;
   border-radius: 16px;
   min-width: 36px;
   background-size: 400% 400%;
 }
 
 #workspaces button.urgent {
-  background-color: @red;
-  color: @bg0;
+  background-color: #ff707e;
+  color: @background;
   border-radius: 16px;
   min-width: 36px;
   background-size: 400% 400%;
@@ -82,55 +84,51 @@ tooltip label {
 #custom-notification,
 #custom-power
 {
-  background-color: @bg0;
+  background-color: @background;
   padding: 0 10px;
   margin: 0 0 0 8px;
   border-radius: 36px;
-  border: 1px solid @bg1;
+  border: 1px solid @color8;
 }
 
 #clock {
-  color: @blue;
+  color: @foreground;
 }
 
 #custom-notification {
-  color: @fg;
+  color: @color15;
 }
 
 #pulseaudio {
-  color: @yellow;
+  color: @color11;
 }
 
 #network {
-  color: @purple;
+  color: @color13;
 }
 
 #battery {
-  color: @green;
+  color: @color9;
 }
 
 #custom-power {
-  color: #f38ba8;
+  color: @color5;
   margin: 0 8px;
 }
 
 #custom-power:hover {
-  color: #eba0ac;
+  color: @color6;
 }
 
 #mpris {
   margin: 0 0 0 8px;
-  color: @bg2;
-}
-
-#window {
-  color: @bg3;
+  color: @color11;
 }
 
 #bluetooth {
-  color: @aqua;
+  color: @color12;
 }
 
 #custom-ethernet {
-  color: @purple;
+  color: @color13;
 }
