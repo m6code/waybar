@@ -1,0 +1,195 @@
+{
+  "position": "top",
+  // "position": "bottom",
+  "margin-top": 5,
+  "margin-bottom": 5,
+
+  "modules-left": ["clock", "hyprland/workspaces","hyprland/window", "mpris"],
+  "modules-center": ["tray"],
+  "modules-right": [
+    "network#wifi",
+    "network#ethernet",
+    "custom/ethernet",
+    "pulseaudio",
+    "bluetooth",
+    "battery",
+    "custom/notification",
+    "custom/power",
+  ],
+  "clock": {
+    "format": "{:%H:%M | %d/%m}",
+    "format-alt": "{:%H:%M | %A, %d %B}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#ffcc66'><b>{}</b></span>"
+      }
+    }
+  },
+  "hyprland/workspaces": {
+    "format": "{name} {icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      // "*": 5, // 5 workspaces by default on every monitor
+      // "HDMI-A-1": 3 // but only three on HDMI-A-1
+    }
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 7,
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
+      "spotify": false
+    },
+    "orders": {
+      "wechat": 99
+    }
+  },
+  "network#wifi": {
+    "interval": 1,
+    "interface": "wlo1",
+    "format": "{ifname}",
+    "format-wifi": "⌄ {bandwidthDownBytes} ⌃ {bandwidthUpBytes}  {essid}  ({signalStrength}%)",
+    "format-disconnected": "", //An empty format will hide the module.
+    // "format-disconnected": "",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) 󰤨",
+    // "tooltip-format-disconnected": "Disconnected",
+    "max-length": 65
+  },
+  "network#ethernet": {
+    "interval": 1,
+    "interface": "eno1", // use nmcli device status to get list of connected devices
+    "format-ethernet": "⌄ {bandwidthDownBytes} ⌃ {bandwidthUpBytes} 󰈀",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname}",
+    "tooltip-format-ethernet": "{ifname} ",
+    "max-length": 65
+  },
+  "custom/ethernet": {
+    "exec": "~/.config/waybar/scripts/eth-tether.sh",
+    "return-type": "json",
+    "interval": 1,
+    "max-length": 65
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+      "headphone": "",
+      "hands-free": "󰂑",
+      "headset": "󰂑",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": "󰂱 {num_connections}",
+    // "format-connected-battery": "󰂱 {num_connections} {device_alias} 󰂄 {device_battery_percentage}%",
+    "format-connected-battery": "󰂱 {num_connections} 󰂄 {device_battery_percentage}%",
+    "format-alt": "󰂱 {num_connections} {device_alias} 󰂄 {device_battery_percentage}%",
+    "format-alt-click": "click",
+    "tooltip-format": " {device_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias} 󰂄 {device_battery_percentage}%",
+    "tooltip": true,
+    //    "on-click": "blueman-manager",
+    "on-click-right": "blueman-manager",
+  },
+  "battery": {
+    "interval": 5,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    // "events": {
+    //  "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+    // "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+    //"on-charging-100": "notify-send -u normal 'Battery Full!'",
+    //"on-discharging": "notify-send -u normal 'Power Switch' Discharging",
+    //"on-charging": "notify-send -u normal 'Power Switch' Charging'"
+    //},
+    "on-update": "~/.config/waybar/scripts/battery-notify.sh",
+    "format": "{icon} {capacity}%",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+    },
+    "max-length": 15
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='12pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "on-click-right": "playerctl next",
+    "scroll-step": 5.0,
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "smooth-scrolling-threshold": 1,
+    "player-icons": {
+      "chromium": "",
+      "default": "",
+      "firefox": "",
+      "kdeconnect": "k🢒",
+      "mopidy": "",
+      "mpv": "󰐹",
+      "spotify": "",
+      "vlc": "󰕼",
+    },
+    "status-icons": {
+      "paused": "󰐎",
+      "playing": "",
+      "stopped": "",
+    },
+    "max-length": 15
+    // "ignored-players": ["firefox"]
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout",
+    "on-click-right": "wlogout --protocol layer-shell"
+  }
+}
