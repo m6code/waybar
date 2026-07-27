@@ -7,7 +7,7 @@
   border-radius: 0px;
   font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font Propo", sans-serif;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 10px;
   min-height: 0;
   padding: 0;
   margin:0;
@@ -35,7 +35,7 @@ tooltip label {
 #workspaces {
   background-color: @background;
   padding: 5px 3px;
-  margin: 0 0 0 12px;
+  margin: 0 0 0 6px;
   border-radius: 18px;
   border: 1px solid @color0;
   color: @foreground;
@@ -50,7 +50,9 @@ tooltip label {
   transition: all 0.3s ease-in-out;
 }
 
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.focused
+{
   color: @color14;
   background-color: @color0;
   min-width: 36px;
@@ -86,7 +88,7 @@ tooltip label {
 {
   background-color: @background;
   padding: 0 10px;
-  margin: 0 0 0 8px;
+  margin: 0 0 0 6px;
   border-radius: 36px;
   border: 1px solid @color8;
 }

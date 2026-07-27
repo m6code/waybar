@@ -1,7 +1,7 @@
 { "position": "top",
   // "position": "bottom",
-  "margin-top": 5,
-  "margin-bottom": 5,
+  "margin-top": 3,
+  "margin-bottom": 2,
 
   "modules-left": ["clock", "sway/workspaces","hyprland/workspaces","hyprland/window", "sway/window", "mpris"],
   "modules-center": ["tray"],
