@@ -5,12 +5,13 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font Propo", sans-serif;
+  font-family:
+    "FiraCode Nerd Font", "JetBrainsMono Nerd Font Propo", sans-serif;
   font-weight: bold;
   font-size: 10px;
   min-height: 0;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
 window#waybar {
@@ -29,7 +30,7 @@ tooltip label {
 }
 #window {
   margin: 0 0 0 8px;
-  color: @color9;
+  color: @color8;
 }
 
 #workspaces {
@@ -43,7 +44,7 @@ tooltip label {
 
 #workspaces button {
   background-color: @background;
-  color: @cursor;
+  color: @color8;
   padding: 0px 6px;
   margin: 0px 3px;
   border-radius: 36px;
@@ -51,9 +52,8 @@ tooltip label {
 }
 
 #workspaces button.active,
-#workspaces button.focused
-{
-  color: @color14;
+#workspaces button.focused {
+  color: @cursor;
   background-color: @color0;
   min-width: 36px;
   transition: all 0.3s ease-in-out;
@@ -84,8 +84,7 @@ tooltip label {
 #custom-ethernet,
 #clock,
 #custom-notification,
-#custom-power
-{
+#custom-power {
   background-color: @background;
   padding: 0 10px;
   margin: 0 0 0 6px;
@@ -106,7 +105,7 @@ tooltip label {
 }
 
 #network {
-  color: @color13;
+  color: @color14;
 }
 
 #battery {
@@ -124,7 +123,7 @@ tooltip label {
 
 #mpris {
   margin: 0 0 0 8px;
-  color: @color11;
+  color: @cursor;
 }
 
 #bluetooth {
@@ -132,5 +131,5 @@ tooltip label {
 }
 
 #custom-ethernet {
-  color: @color13;
+  color: @color14;
 }

@@ -1,14 +1,20 @@
-{ 
+{
   // "position": "top",
   //  "margin-top": 3,
   //  "margin-bottom": 2,
-
 
   "position": "bottom",
   "margin-top": 5,
   "margin-bottom": 2,
 
-  "modules-left": ["clock", "sway/workspaces","hyprland/workspaces","hyprland/window", "sway/window", "mpris"],
+  "modules-left": [
+    "clock",
+    "sway/workspaces",
+    "hyprland/workspaces",
+    "hyprland/window",
+    "sway/window",
+    "mpris",
+  ],
   "modules-center": ["tray"],
   "modules-right": [
     "network#wifi",
@@ -26,61 +32,73 @@
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "format": {
-        "today": "<span color='#ffcc66'><b>{}</b></span>"
-      }
+        "today": "<span color='#ffcc66'><b>{}</b></span>",
+      },
     },
-    "on-click-right": "rofi -show run"
+    "on-click-right": "rofi -show run",
   },
   "hyprland/workspaces": {
     "format": "{name} {icon}",
     "on-click": "activate",
+    "smooth-scrolling-threshold": 3,
     "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
     "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
     "format-icons": {
-      "1": "",
-      "2": "",
+      "1": "",
+      "2": "󰖟",
       "3": "",
-      "4": "",
-      "5": "",
+      "4": "",
+      "5": "󱒃",
+      "6": "",
+      "7": "",
+      "8": "󰈙",
+      "9": "",
+      "10": "",
       "active": "",
-      "default": ""
+      "default": "",
     },
     "persistent-workspaces": {
       // "*": 5, // 5 workspaces by default on every monitor
       // "HDMI-A-1": 3 // but only three on HDMI-A-1
-    }
+    },
   },
   "sway/workspaces": {
     "format": "{name} {icon}",
     "on-click": "activate",
+    "smooth-scrolling-threshold": 3,
     "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
     "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
     "format-icons": {
-      "1": "",
-      "2": "",
+      "1": "",
+      "2": "󰖟",
       "3": "",
-      "4": "",
-      "5": "",
+      "4": "",
+      "5": "󱒃",
+      "6": "",
+      "7": "",
+      "8": "󰈙",
+      "9": "",
+      "10": "",
       "active": "",
-      "default": ""
+      "default": "",
     },
     "persistent-workspaces": {
       // "*": 5, // 5 workspaces by default on every monitor
       // "HDMI-A-1": 3 // but only three on HDMI-A-1
-    }
+    },
   },
- 
+
   "tray": {
     "icon-size": 14,
     "spacing": 7,
     "icons": {
       "blueman": "bluetooth",
       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
-      "spotify": false
+      "spotify": false,
     },
     "orders": {
-      "wechat": 99
-    }
+      "wechat": 99,
+    },
   },
   "network#wifi": {
     "interval": 1,
@@ -91,7 +109,7 @@
     // "format-disconnected": "",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) 󰤨",
     // "tooltip-format-disconnected": "Disconnected",
-    "max-length": 65
+    "max-length": 65,
   },
   "network#ethernet": {
     "interval": 1,
@@ -101,13 +119,13 @@
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname}",
     "tooltip-format-ethernet": "{ifname} ",
-    "max-length": 65
+    "max-length": 65,
   },
   "custom/ethernet": {
     "exec": "~/.config/waybar/scripts/eth-tether.sh",
     "return-type": "json",
     "interval": 1,
-    "max-length": 65
+    "max-length": 65,
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -123,10 +141,10 @@
       "phone-muted": "",
       "portable": "",
       "car": "",
-      "default": ["", ""]
+      "default": ["", ""],
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
 
   "bluetooth": {
@@ -148,7 +166,7 @@
     "interval": 5,
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     // "events": {
     //  "on-discharging-warning": "notify-send -u normal 'Low Battery'",
@@ -161,9 +179,9 @@
     "format": "{icon} {capacity}%",
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
     },
-    "max-length": 15
+    "max-length": 15,
   },
   "custom/notification": {
     "tooltip": true,
@@ -176,14 +194,14 @@
       "inhibited-notification": "󰂛",
       "inhibited-none": "󰪑",
       "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
+      "dnd-inhibited-none": "󰪑",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "escape": true,
   },
   "mpris": {
     "format": "{player_icon} {dynamic}",
@@ -197,7 +215,7 @@
       "chromium": "",
       "default": "",
       "firefox": "",
-      "kdeconnect": "k🢒",
+      "kdeconnect": "󰄙 ",
       "mopidy": "",
       "mpv": "󰐹",
       "spotify": "",
@@ -208,13 +226,15 @@
       "playing": "",
       "stopped": "",
     },
-    "max-length": 15
+    "max-length": 15,
     // "ignored-players": ["firefox"]
   },
   "custom/power": {
     "format": "⏻",
     "tooltip": false,
     "on-click": "wlogout",
-    "on-click-right": "wlogout --protocol layer-shell"
-  }
+    "on-click-right": "wlogout --protocol layer-shell",
+  },
 }
+
+// 󰒛     󰎅       󰄙         
